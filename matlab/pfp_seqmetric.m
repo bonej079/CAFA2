@@ -148,7 +148,7 @@ function [m] = pfp_seqmetric(target, pred, oa, metric, varargin)
   % }}}
 
   % call to pfp_seqcm {{{
-  if ismember(metric, {'wpr', 'wfmax', 'rm', 'nrm', 'smin', 'nsmin'}) && isempty(p.Results.w)
+  if ismember(metric, {'wpr', 'wfmax', 'rm', 'nrm', 'smin', 'nsmin'}) && exist(p.Results.w) % isempty(p.Results.w)
     error('pfp_seqmetric:MissingW', 'Provide a weight vector ''w'' to compute this metric');
   end
   cm = pfp_seqcm(target, pred, oa, 'tau', p.Results.tau, 'toi', p.Results.toi, 'w', p.Results.w);

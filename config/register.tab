@@ -3,4 +3,4 @@ BN4S	Naive-S14	Naive	n	Naive	Naive	Baseline	NA	C4302B
 BB4S	BLAST-S14	BLAST	b	BLAST	BLAST	Baseline	NA	00539F
 BN4H	Naive-H14	Naive	n	Naive	Naive	Baseline	NA	C4302B
 BB4H	BLAST-H14	BLAST	b	BLAST	BLAST	Baseline	NA	00539F
-M001	100-1	mymodel(1)	q	My Model	My Model	XXX	NA	000000
+M001	100-1	BonelloFunfam-FF	q	FunfamerMod8	FunfamerMod8	Orengo	NA	010101

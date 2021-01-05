@@ -1,0 +1,85 @@
+# Example for an pre-evaluation/evaluation pipeline job
+
+# paths to folder/files
+# ----
+# folder for prediction structure files
+pred_dir = /mnt/DataDrive/predictions/tmp/predictions/20201217161407/metrics/prediction/mfo/
+
+# folder for pre-evaluation results
+prev_dir = /mnt/DataDrive/predictions/tmp/predictions/20201217161407/metrics/seq-centric/mfo/
+
+# folder for evaluation results
+eval_dir = /mnt/DataDrive/predictions/tmp/predictions/20201217161407/metrics/evaluation/mfo_all_type1_mode1/
+
+# file for groundtruth annotation
+annotation = /mnt/DataDrive/Data/CAFA2/Supplementary_data/code/yuxjiang/CAFA2/benchmark/groundtruth/mfoa.mat
+
+# file for benchmark protein list
+benchmark = /mnt/DataDrive/Data/CAFA2/Supplementary_data/code/yuxjiang/CAFA2/benchmark/lists/mfo_all_type1.txt
+
+# file for bootstrap benchmark index (for repeatable results)
+bootstrap = /mnt/DataDrive/predictions/tmp/predictions/20201217161407/metrics/bootstrap/mfo_all_type1.mat
+
+# ontology
+# ----
+# a string indicates which of the four ontologies
+# options: mfo, bpo, cco, hpo
+ontology = mfo
+
+# benchmark category
+# ----
+# a string indicate evaluation category
+# options: all, easy, hard, eukarya, prokarya, or SPECIES (e.g., HUMAN, MOUSE)
+category = all
+
+# type
+# ----
+# evaluation benchmark type, options: 1, 2
+# type 1: no-knowledge (NK)
+# type 2: limited-knowledge (LK)
+type = 1
+
+# mode
+# ----
+# evaluation mode, options: 1, 2
+# mode 1: full
+# mode 2: partial
+mode = 1
+
+# metric
+# ----
+# choice of metrics of interest, any combination of the following options:
+# sequence-centric:
+# f (F1-max),
+# s (S2-min),
+# wf (weighted F1-max),
+# ns (normalized S2-min),
+metric = f
+metric = wf
+metric = s
+metric = ns
+# term-centric:
+# auc (area under the ROC curve)
+metric = auc
+
+# optional metric specifications:
+# beta in F_{beta} measure
+# beta = 1
+# default (1)
+
+# model
+# ----
+# choice of models of interest, any combination of submitted methods and
+# baselines, all submitted methods can be referred to as shortcut: all
+# options: all (all regular models) # +M*, -M*, +B*, -B*
+# baseline (Naive/BLAST): B[NB][14][SGUA]
+# note: B[NB]4S is the most typical, which was trained on SwissProt Jan.2014
+model = all
+model = +BN4S
+model = +BB4S
+
+# -------------
+# Yuxiang Jiang (yuxjiang@indiana.edu)
+# Department of Computer Science
+# Indiana University, Bloomington
+# Last modified: Mon 08 May 2017 05:39:10 PM E

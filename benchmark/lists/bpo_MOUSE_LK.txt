@@ -1,1 +1,0 @@
-bpo_MOUSE_type2.txt

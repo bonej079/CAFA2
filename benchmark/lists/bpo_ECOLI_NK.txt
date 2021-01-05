@@ -1,1 +1,0 @@
-bpo_ECOLI_type1.txt
